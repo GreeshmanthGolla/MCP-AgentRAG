@@ -1,0 +1,60 @@
+{
+  "ENT-1001": {
+    "entity_id": "ENT-1001",
+    "name": "Aarti Iyer",
+    "type": "employee",
+    "department": "Engineering",
+    "role": "Principal Architect",
+    "location": "Bengaluru",
+    "tenure_months": 28,
+    "security_clearance": "Confidential",
+    "history": [
+      {
+        "case_id": "CASE-901",
+        "type": "expense",
+        "amount": 420.0,
+        "status": "approved",
+        "date": "2024-01-15"
+      }
+    ]
+  },
+  "ENT-1002": {
+    "entity_id": "ENT-1002",
+    "name": "CloudScale Technologies",
+    "type": "vendor",
+    "contract_id": "MSA-2024-8891",
+    "account_status": "Active",
+    "annual_contract_value_usd": 180000.0,
+    "sla_tier": "Critical Enterprise",
+    "contact_email": "ops@cloudscale.example.com",
+    "history": [
+      {
+        "case_id": "CASE-804",
+        "type": "sla_credit",
+        "amount": 1800.0,
+        "status": "resolved",
+        "date": "2023-11-20"
+      }
+    ]
+  },
+  "ENT-1003": {
+    "entity_id": "ENT-1003",
+    "name": "Apex Global Retail",
+    "type": "customer",
+    "account_tier": "Enterprise Gold",
+    "assigned_csm": "Elena Rostova",
+    "products_subscribed": [
+      "PROD-A101",
+      "PROD-B202"
+    ],
+    "mrr_usd": 1950.0,
+    "history": [
+      {
+        "case_id": "CASE-771",
+        "type": "onboarding",
+        "status": "completed",
+        "date": "2023-09-01"
+      }
+    ]
+  }
+}

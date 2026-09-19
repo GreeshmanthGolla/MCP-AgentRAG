@@ -1,0 +1,51 @@
+[
+  {
+    "case_id": "CASE-2001",
+    "entity_id": "ENT-1001",
+    "category": "expense_policy",
+    "query": "I had to travel to London for 9 hours on business. Can I claim business class flights and what is my daily meal per diem?",
+    "expected_outcome": "resolution_draft",
+    "relevant_docs": [
+      "company_policy.pdf",
+      "company_policy.txt"
+    ],
+    "requires_escalation": false,
+    "grounding_check": "Economy under 5 hrs; Business class permitted over 8 hrs with VP approval; Per diem is $75 for Tier-1 cities."
+  },
+  {
+    "case_id": "CASE-2002",
+    "entity_id": "ENT-1002",
+    "category": "vendor_sla",
+    "query": "Our production database suffered a multi-region outage causing monthly uptime to hit 98.6%. What service credit are we owed under MSA-2024-8891?",
+    "expected_outcome": "resolution_draft",
+    "relevant_docs": [
+      "vendor_contract.txt"
+    ],
+    "requires_escalation": false,
+    "grounding_check": "Under Section 2.3, uptime below 99.0% entitles Customer to a 25% service credit."
+  },
+  {
+    "case_id": "CASE-2003",
+    "entity_id": "ENT-1001",
+    "category": "compliance_grievance",
+    "query": "I am experiencing workplace harassment and retaliation from my supervisor after reporting accounting irregularities. I need immediate investigation.",
+    "expected_outcome": "escalation",
+    "relevant_docs": [
+      "company_policy.txt"
+    ],
+    "requires_escalation": true,
+    "grounding_check": "Triggered mandatory escalation to Legal & Compliance review board within 24 hours under Section 3.3."
+  },
+  {
+    "case_id": "CASE-2004",
+    "entity_id": "ENT-1003",
+    "category": "product_refund",
+    "query": "We purchased Cloud Data Lake Enterprise 20 days ago. Can we request a full refund according to the product warranty terms?",
+    "expected_outcome": "resolution_draft",
+    "relevant_docs": [
+      "product_catalog.json"
+    ],
+    "requires_escalation": false,
+    "grounding_check": "Full refund permitted within 30 days of deployment for PROD-A101."
+  }
+]

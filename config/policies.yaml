@@ -1,0 +1,61 @@
+# Universal Document Copilot Policy & Escalation Rules
+# Domain-independent risk boundaries and human-in-the-loop (HITL) enforcement
+
+governance:
+  enforce_hitl_for_all_dispatches: true
+  auto_dispatch_forbidden: true
+
+escalation_triggers:
+  # Sensitive keywords that mandate immediate supervisor escalation
+  sensitive_keywords:
+    - "harassment"
+    - "discrimination"
+    - "lawsuit"
+    - "litigation"
+    - "subpoena"
+    - "breach of contract"
+    - "whistleblower"
+    - "fraud"
+    - "regulatory violation"
+    - "illegal"
+    - "retaliation"
+    - "severance dispute"
+
+  # Value / monetary thresholds that require senior review
+  financial_thresholds:
+    max_auto_claim_amount_usd: 1000.0
+    require_executive_signoff_above_usd: 10000.0
+
+  # System confidence and grounding triggers
+  confidence_thresholds:
+    min_grounding_score: 0.65
+    max_hallucination_score: 0.35
+    max_reflection_loops: 2
+
+risk_categories:
+  low:
+    description: "Informational queries backed directly by ingested documentation."
+    require_human_review: true
+    allow_draft_generation: true
+
+  medium:
+    description: "Account adjustments, policy exceptions, or status updates."
+    require_human_review: true
+    allow_draft_generation: true
+    audit_logging: true
+
+  high:
+    description: "Grievances, legal disputes, contract terminations, or financial liabilities."
+    require_human_review: true
+    allow_draft_generation: false
+    force_escalation: true
+    audit_logging: true
+
+redaction_policies:
+  pii_types:
+    - "EMAIL"
+    - "PHONE"
+    - "SSN"
+    - "CREDIT_CARD"
+    - "IP_ADDRESS"
+    - "API_KEY"

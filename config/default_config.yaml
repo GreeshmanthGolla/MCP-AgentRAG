@@ -1,0 +1,77 @@
+# Universal Document & Case Resolution Copilot Default Configuration
+
+system:
+  name: "Universal Document & Case Resolution Copilot"
+  version: "1.0.0"
+  domain_independent: true
+
+llm:
+  mode: "offline"                  # options: offline, gemini, openai, ollama
+  gemini_model: "gemini-3.6-pro-latest"
+  openai_model: "gpt-4o"
+  temperature: 0.1
+  max_output_tokens: 2048
+  cost_per_1k_input: 0.00125
+  cost_per_1k_output: 0.00500
+  cache_enabled: true
+  cache_path: "data/storage/llm_cache.sqlite"
+
+chunking:
+  chunk_size_tokens: 500
+  chunk_overlap_tokens: 50
+  split_by_headings: true
+  supported_extensions:
+    - ".pdf"
+    - ".docx"
+    - ".doc"
+    - ".txt"
+    - ".md"
+    - ".markdown"
+    - ".csv"
+    - ".json"
+    - ".jsonl"
+    - ".yaml"
+    - ".yml"
+    - ".html"
+    - ".htm"
+
+retrieval:
+  top_k: 5
+  bm25_weight: 0.55
+  vector_weight: 0.45
+  rrf_k: 60
+  relevance_floor: 0.001
+  enable_reranker: true
+  embedding_model: "all-MiniLM-L6-v2"
+
+guardrails:
+  enable_pii_redaction: true
+  enable_injection_defense: true
+  mask_char: "[REDACTED]"
+  quarantine_untrusted: true
+
+reflection:
+  max_retries: 2
+  grounding_threshold: 0.70
+  hallucination_floor: 0.30
+
+memory:
+  db_path: "data/storage/copilot_memory.sqlite"
+  working_memory_max_steps: 50
+  episodic_lru_size: 100
+  enable_sqlite_wal: true
+
+mcp:
+  transport: "stdio"
+  host: "127.0.0.1"
+  port: 8001
+  allowed_scopes:
+    - "read:docs"
+    - "read:entity"
+    - "write:audit"
+    - "execute:query"
+
+ui:
+  theme: "light"
+  port: 8501
+  max_upload_size_mb: 50
