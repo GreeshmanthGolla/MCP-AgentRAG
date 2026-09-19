@@ -1,3 +1,5 @@
+[Live Demo on Streamlit](https://mcp-agentrag-greeshmanthgolla.streamlit.app/)
+
 # Universal Document & Case Resolution Copilot
 
 > A governed, domain-independent multi-agent AI copilot that ingests **any document or corpus** (PDF, DOCX, Markdown, TXT, CSV, JSON, HTML) along with dynamic entity metadata, autonomously analyzes cases, executes verified tool actions via FastMCP, and generates **grounded, cited resolution drafts for human approval**.
